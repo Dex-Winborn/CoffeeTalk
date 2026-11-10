@@ -3336,3 +3336,49 @@ svg {
     ) !important;
   }
 }
+
+/* Extend the decorative artwork edge-to-edge across the visit section. */
+.visit-section::before {
+  inset: 0 !important;
+  width: 100% !important;
+  transform: none !important;
+}
+
+/* Let the homepage geometric artwork reach both viewport edges as well. */
+#home::before {
+  inset: 0 auto 0 50% !important;
+  width: 100vw !important;
+  transform: translateX(-50%) !important;
+  background-image: linear-gradient(
+    180deg,
+    transparent 56%,
+    rgba(0, 52, 61, 0.3) 68%,
+    #00343d 82%,
+    #ff7000 100%
+  ) !important;
+  -webkit-mask-image: url("../images/pattern.png") !important;
+  mask-image: url("../images/pattern.png") !important;
+  -webkit-mask-size: 680px auto !important;
+  mask-size: 680px auto !important;
+  -webkit-mask-repeat: repeat-x !important;
+  mask-repeat: repeat-x !important;
+  -webkit-mask-position: center bottom !important;
+  mask-position: center bottom !important;
+}
+
+/* Match the footer artwork fade to the homepage geometric gradient. */
+.visit-section::before {
+  background-image: linear-gradient(
+    180deg,
+    transparent 56%,
+    rgba(0, 52, 61, 0.3) 68%,
+    #00343d 82%,
+    #ff7000 100%
+  ) !important;
+}
+
+/* Give the embedded Google map a dark palette to match the café theme. */
+.map-card iframe {
+  filter: invert(0.88) hue-rotate(180deg) brightness(0.82) contrast(0.9)
+    saturate(0.75);
+}
